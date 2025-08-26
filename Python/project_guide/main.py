@@ -15,5 +15,4 @@ def main():
         else:
             students.get(command, lambda: print("잘못된 명령어입니다."))()
 
-if __name__ == "__main__":
-    main()
+main()
