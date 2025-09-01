@@ -1,0 +1,207 @@
+/* 
+    body {
+        font-family: 'Arial', sans-serif;
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 20px;
+        background-color: #f5f5f5;
+    }
+    .container {
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .header {
+        text-align: center;
+        color: #333;
+        margin-bottom: 30px;
+    }
+    .group {
+        margin-bottom: 20px;
+        padding: 15px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        border-left: 5px solid #007bff;
+    }
+    .group-title {
+        font-weight: bold;
+        color: #007bff;
+        margin-bottom: 10px;
+    }
+    .members {
+        color: #555;
+        line-height: 1.6;
+    }
+    .total {
+        text-align: center;
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 2px solid #eee;
+        font-weight: bold;
+        color: #333;
+    } */
+
+
+/* 기본 설정 */
+body {
+    font-family: 'Noto Sans KR', 'Pretendard', sans-serif;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    background-color: #f0f4f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* 메인 컨테이너 */
+.container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.container:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* 헤더 디자인 */
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 25px;
+    border-bottom: 2px solid #f0f0f0;
+    position: relative;
+}
+
+.header h1 {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+    position: relative;
+    display: inline-block;
+}
+
+.header h1:after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #3498db, #2980b9);
+    border-radius: 2px;
+}
+
+/* 그룹 디자인 */
+.group {
+    margin-bottom: 25px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-left: 6px solid #3498db;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.group:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* 홀수 그룹과 짝수 그룹 색상 다르게 하기 */
+.group:nth-child(odd) {
+    border-left-color: #3498db;
+}
+
+.group:nth-child(even) {
+    border-left-color: #1abc9c;
+}
+
+.group-title {
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+    color: #2c3e50;
+    display: flex;
+    align-items: center;
+}
+
+.group:nth-child(odd) .group-title {
+    color: #3498db;
+}
+
+.group:nth-child(even) .group-title {
+    color: #1abc9c;
+}
+
+.group-title:before {
+    content: "👥";
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+.members {
+    color: #555;
+    line-height: 1.8;
+    background-color: #f8f9fa;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 1.05rem;
+}
+
+/* 전체 인원 디자인 */
+.total {
+    text-align: center;
+    margin-top: 35px;
+    padding-top: 25px;
+    border-top: 2px solid #f0f0f0;
+    font-weight: 700;
+    color: #2c3e50;
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+}
+
+.total:before {
+    content: "👨‍👩‍👧‍👦";
+    margin-right: 10px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .container {
+        padding: 25px;
+    }
+    
+    .header h1 {
+        font-size: 2rem;
+    }
+}
+
+/* 애니메이션 효과 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.container {
+    animation: fadeIn 0.8s ease-out;
+}
+
+.group {
+    animation: fadeIn 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+.group:nth-child(1) { animation-delay: 0.1s; }
+.group:nth-child(2) { animation-delay: 0.2s; }
+.group:nth-child(3) { animation-delay: 0.3s; }
+.group:nth-child(4) { animation-delay: 0.4s; }
+.group:nth-child(5) { animation-delay: 0.5s; }
+.group:nth-child(6) { animation-delay: 0.6s; }
+.group:nth-child(7) { animation-delay: 0.7s; }
+.group:nth-child(8) { animation-delay: 0.8s; }

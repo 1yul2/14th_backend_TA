@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    </head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>백엔드 14기 자리배치도</h1>
+        </div>
+        {{group_html|safe}}
+        <div class="total">
+            전체 인원: {{total_students}}명
+        </div>
+    </div>
+</body>
+</html>
